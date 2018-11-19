@@ -10,6 +10,9 @@ import { Passenger } from '../../models/passenger.interface';
             <passenger-count
               [items]="passengers">
             </passenger-count>
+            <div *ngFor="let passenger of passengers;">
+                {{ passenger.fullname}}
+            </div>
             <ul>
                 <passenger-detail
                     *ngFor="let passenger of passengers;"
@@ -70,7 +73,6 @@ export class PassengerDashboardComponent implements OnInit {
             }
             return p;
         });
-        console.log(this.passengers);
     }
 
     handleRemove(event: Passenger) {
