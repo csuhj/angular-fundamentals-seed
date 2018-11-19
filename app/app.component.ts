@@ -16,7 +16,7 @@ interface Passenger {
 @Component({
   selector: 'app-root',
   styleUrls: ['app.component.scss'],
-  templateUrl: `
+  template: `
 
     <!-- just set style property -->
     <h3>Airline Passengers</h3>
