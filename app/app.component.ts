@@ -10,21 +10,32 @@ interface Passenger {
   selector: 'app-root',
   styleUrls: ['app.component.scss'],
   templateUrl: `
+
+    <!-- add new class if property set -->
     <h3>Airline Passengers</h3>
     <ul>
       <li *ngFor="let passenger of passengers; let i = index;">
+        <span 
+          class="status"
+          [class.checked-in]="passenger.checkedIn"
+        ></span>
         {{ i }}: {{ passenger.fullname }}
       </li>
     </ul>
 
-    <!-- how this is expanded into from the * in a web component template -->
+    <!-- use ngClass -->
     <h3>Airline Passengers</h3>
     <ul>
-      <template ngFor let-passenger let-i="index" [ngForOf]="passengers">
-        <li>
-          {{ i }}: {{ passenger.fullname }}
-        </li>
-      </template>
+      <li *ngFor="let passenger of passengers; let i = index;">
+        <span 
+          class="status"
+          [ngClass]="{
+             'checked-in': passenger.checkedIn,
+             'checked-out': !passenger.checkedIn 
+          }"
+        ></span>
+        {{ i }}: {{ passenger.fullname }}
+      </li>
     </ul>
   `
 })
