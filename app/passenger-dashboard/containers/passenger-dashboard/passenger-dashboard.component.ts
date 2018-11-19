@@ -12,7 +12,6 @@ import { Passenger } from '../../models/passenger.interface';
             </passenger-count>
             <passenger-detail>
             </passenger-detail>
-            <h3>Airline Passengers</h3>
             <ul>
             <li *ngFor="let passenger of passengers; let i = index;">
                 <span 
