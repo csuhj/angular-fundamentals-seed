@@ -15,12 +15,16 @@ import { Baggage } from '../../models/baggage.interface';
                     type="text"
                     name="fullname"
                     required
+                    minlength="2"
                     #fullname="ngModel"
                     [ngModel]="detail?.fullname"
                 >
                 <div *ngIf="fullname.errors?.required && fullname.dirty" class="error">
                     Passenger name is required
                 </div>
+                <div *ngIf="fullname.errors?.minlength && fullname.dirty" class="error">
+                Passenger name is too short
+            </div>
             </div>
             <div>
                 Passenger ID:
@@ -31,7 +35,7 @@ import { Baggage } from '../../models/baggage.interface';
                     #id="ngModel"
                     [ngModel]="detail?.id"
                 >
-                <div *ngIf="id.errors?.required && id.dirty" class="error">
+                <div *ngIf="id.errors?.required && id.touched" class="error">
                     Passenger ID is required
                 </div>
             </div>
