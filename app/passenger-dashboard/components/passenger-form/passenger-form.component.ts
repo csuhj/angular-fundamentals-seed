@@ -49,8 +49,7 @@ import { Baggage } from '../../models/baggage.interface';
                 > 
                     <option
                         *ngFor="let item of baggage;"
-                        [value]="item.key"
-                        [selected]="item.key === detail?.baggage"
+                        [ngValue]="item.key"
                     >
                         {{ item.value}}
                     </option>
