@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'redirect', redirectTo: 'passengers' },
   { path: '**', component: NotFoundComponent },
 ];
 
