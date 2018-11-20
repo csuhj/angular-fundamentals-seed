@@ -16,13 +16,13 @@ import { Passenger } from '../../models/passenger.interface';
                 >
             </div>
             <div>
-            Passenger ID:
-            <input 
-                type="number"
-                name="id"
-                [ngModel]="detail?.id"
-            >
-        </div>
+                Passenger ID:
+                <input 
+                    type="number"
+                    name="id"
+                    [ngModel]="detail?.id"
+                >
+            </div>
             {{ form.value | json}}
         </form>  
     `
